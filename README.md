@@ -40,8 +40,13 @@ colcon build
 ros2 run navrobot robot_core_odom
 
 rviz2    # run woke space
-
-
+```
+### odom_nav.py >> ~/navrobot_ws/src/navrobot/navrobot$
+```
+cd ~/navrobot_ws/src/navrobot/navrobot
+touch odom_nave.py  # open copy from google drive
+ros2 interface list
+ros2 interface show geometry_msgs/msg/Point
 
 
 ```
