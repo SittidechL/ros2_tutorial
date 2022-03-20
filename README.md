@@ -52,6 +52,13 @@ cd ~/navrobot_ws/src/navrobot/navrobot
 touch odom_nave.py  # open copy from google drive
 ros2 interface list
 ros2 interface show geometry_msgs/msg/Point
+```
+### Odometry testing (Lidar)
+```
+1:25:30
+```
 
-
+### cartographer.launch.py
+```
+3:32:29
 ```
