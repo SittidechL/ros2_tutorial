@@ -17,7 +17,16 @@ code .  # open VScode >> setup.py >> "etry_point =" insert "robot_core_odom = na
 cd .. x2
 colcon build
 source install/local_setup.bash
-ros2 pkg list    # can see "navrobot
-1:42:52
+ros2 pkg list    # can see "navrobot"
+```
+## connect with robot
+```
+ros2 run navrobot robot_core_odom
+ros2 topic list
 
-``
+sudo apt install ros-galactic-teleop-twist-keyboard  # install key board control
+ros2 run teleop_twist_keyboard teleop_twist_keyboard
+
+ros2 topic echo /right_tick
+
+```
