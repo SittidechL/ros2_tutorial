@@ -1,4 +1,9 @@
-# ros2_tutorial
+## Teensy4.0 (robot_firmware.ino)
+```
+copy file from github "robot_firmware" to arduino and upload to teensy4.0
+```
+
+## ros2_tutorial (robot_core_odom.py) >> ~/navrobot_ws/src/navrobot/navrobot$
 ```
 source /opt/ros/galactic/setup.bash
 source /opt/ros/galactic/setup.bash
