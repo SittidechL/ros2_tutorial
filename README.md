@@ -27,6 +27,6 @@ ros2 topic list
 sudo apt install ros-galactic-teleop-twist-keyboard  # install key board control
 ros2 run teleop_twist_keyboard teleop_twist_keyboard
 
-ros2 topic echo /right_tick
+ros2 topic echo /right_tick   # test topic encoder right
 
 ```
