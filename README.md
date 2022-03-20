@@ -21,6 +21,7 @@ ros2 pkg list    # can see "navrobot"
 ```
 ## connect with robot
 ```
+# run micro_ros_agent micro_ros_agent 
 ros2 run navrobot robot_core_odom
 ros2 topic list
 
@@ -28,5 +29,19 @@ sudo apt install ros-galactic-teleop-twist-keyboard  # install key board control
 ros2 run teleop_twist_keyboard teleop_twist_keyboard
 
 ros2 topic echo /right_tick   # test topic encoder right
+```
+
+### Odometry
+```
+cd navrobot/src/navrobot/navrobot/
+code .   # robot_core_odom.py
+cd ..   # x3 navrobot/
+colcon build
+ros2 run navrobot robot_core_odom
+
+rviz2    # run woke space
+
+
+
 
 ```
