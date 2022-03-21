@@ -38,7 +38,10 @@ ros2 topic echo /right_tick   # test topic encoder right
 
 ### Odometry
 ```
-cd navrobot/src/navrobot/navrobot/
+cd navrobot_ws
+source /opt/ros/galactic/setup.bash
+colcon build
+cd src/navrobot/navrobot/
 code .   # robot_core_odom.py
 cd ..   # x3 navrobot/
 colcon build
