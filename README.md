@@ -56,12 +56,41 @@ touch odom_nave.py  # open copy from google drive
 ros2 interface list
 ros2 interface show geometry_msgs/msg/Point
 ```
-### Odometry testing (Lidar)
+### RPLidar
 ```
-1:25:30
+
 ```
 
 ### cartographer.launch.py
 ```
 3:32:29
 ```
+
+
+### run
+terminal#1
+cd navrobot_ws
+source /opt/ros/galactic/setup.bash
+colcon build
+source install/local_setup.bash
+ros2 run navrobot robot_core_odom
+
+terminal#2
+cd navrobot_ws
+source /opt/ros/galactic/setup.bash
+cd ~/navrobot_ws/src/navrobot/navrobot
+python3 odom_nav.py
+
+
+terminal#3
+cd navrobot_ws
+source /opt/ros/galactic/setup.bash
+rviz2
+
+terminal#4
+cd nav2sim_ws
+source /opt/ros/galactic/setup.bash
+colcon build
+source install/local_setup.bash
+export GAZEBO_MODEL_PATH=/usr/share/gazebo-11/models:${GAZEBO_MODEL_PATH}:~/nav2sim_ws/src/lapras_sim # dir to "nav2sim_ws" path: nav2sim_ws/src/lapras_sim/config/env_config --> double click
+ros2 launch lapras_sim lapras_world.launch.py
