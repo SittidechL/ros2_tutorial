@@ -64,7 +64,7 @@ cd navrobot_ws/src
 git clode -b ros2 https://github.com/Slamtec/rplidar_ros.git
 cd ..
 colcon bulid
-1:48:13
+2:00:00
 ```
 
 ### cartographer.launch.py
