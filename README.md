@@ -66,10 +66,34 @@ cd ..
 colcon bulid
 2:00:00
 ```
-
-### cartographer.launch.py
+### launch file
 ```
-3:32:29
+cd ~/navrobot_ws/src/navrobot/
+mkdir launch && cd launch
+touch robot_bringup.launch.py  
+code .   # copy file from Ros2_nav/launch/robot_bringup.launch.py
+cd .. x3
+colcon build
+ros2 launch navrobot robot_bringup.launch.py   # connect microcontroller
+```
+
+### cartographer SLAM
+```
+cd navrobot_ws/
+sudo apt install ros-galactic-cartographer-ros
+cd src/navrobot/
+mkdir config  # /home/sittidechl/navrobot_ws/src/navrobot/config/cartographer.lua
+cd launch     # /home/sittidechl/navrobot_ws/src/navrobot/launch/cartographer.launch.py
+colcon build
+ros2 launch navrobot robot_bringup.launch.py
+ros2 launch navrobot cartographer.launch.py
+rviz2
+```
+### map server
+```
+cd navrobot
+sudo apt install ros-galactic-nav2-map-server
+ros2 run nav2_map_server map_saver_cli -f new_map
 ```
 
 
