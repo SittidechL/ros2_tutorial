@@ -26,6 +26,12 @@ ros2 pkg list    # can see "navrobot"
 ```
 ## connect with robot
 ```
+cd microros_ws
+source /opt/ros/galactic/setup.bash
+source install/local_setup.bash
+ros2 pkg list  # micro_ros_agent
+ros2 run micro_ros_agent micro_ros_agent serial --dev /dev/ttyACM0
+
 # run micro_ros_agent micro_ros_agent 
 ros2 run navrobot robot_core_odom
 ros2 topic list
