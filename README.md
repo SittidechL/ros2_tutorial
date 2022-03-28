@@ -33,7 +33,10 @@ ros2 pkg list  # micro_ros_agent
 ros2 run micro_ros_agent micro_ros_agent serial --dev /dev/ttyACM0
 ros2 topic list # check topic
 ros2 topic pub --once /wheel_command_left std_msgs/msg/Float32 data:\ 20.0\ 
-ros2 topic echo /left_tick 
+ros2 topic pub --once /wheel_command_right std_msgs/msg/Float32 data:\ 20.0\ 
+
+ros2 topic echo /left_tick
+ros2 topic echo /right_tick 
 
 
 
