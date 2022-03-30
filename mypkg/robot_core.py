@@ -1,8 +1,8 @@
-import rclpy
-from rclpy.node import Node
+import rclpy    				# ros client library python for create publisher and subscriptber
+from rclpy.node import Node			
 
-from geometry_msgs.msg import Twist
-from std_msgs.msg import Float32
+from geometry_msgs.msg import Twist          	# subscriptber: keep date verlocity from topic cmd_vel
+from std_msgs.msg import Float32             	# publisher: data to micro-ros for wheel to rotate
 
 class Robot(Node):
 	def __init__(self):
