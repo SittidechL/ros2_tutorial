@@ -26,6 +26,8 @@ ros2 pkg list    # can see "navrobot"
 ```
 ## connect with robot
 ```
+cd microros_ws && source install/local_setup.bash
+
 cd microros_ws
 source /opt/ros/galactic/setup.bash
 source install/local_setup.bash
