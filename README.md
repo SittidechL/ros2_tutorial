@@ -40,11 +40,12 @@ ros2 topic pub --once /wheel_command_right std_msgs/msg/Float32 data:\ 20.0\
 ros2 topic echo /left_tick
 ros2 topic echo /right_tick 
 
-
-
 # run micro_ros_agent micro_ros_agent 
+
+cd navrobot_ws && source install/local_setup.bash
+ros2 pkg list   # navrobot
 ros2 run navrobot robot_core_odom
-ros2 topic list
+ros2 topic list  # /cmd_vel /left_tick
 
 sudo apt install ros-galactic-teleop-twist-keyboard  # install key board control
 ros2 run teleop_twist_keyboard teleop_twist_keyboard
