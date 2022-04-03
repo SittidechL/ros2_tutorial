@@ -55,6 +55,15 @@ ros2 topic echo /right_tick   # test topic encoder right
 
 ### Odometry
 ```
+terminal#1
+cd navrobot_ws && source install/local_setup.bash
+ros2 run navrobot robot_core_odom
+
+terminal#2
+source install/local_setup.bash
+rviz2
+
+------------
 cd navrobot_ws
 source /opt/ros/galactic/setup.bash
 colcon build
@@ -69,9 +78,10 @@ rviz2    # run woke space
 ### odom_nav.py >> ~/navrobot_ws/src/navrobot/navrobot$
 ```
 cd ~/navrobot_ws/src/navrobot/navrobot
-touch odom_nave.py  # open copy from google drive
+touch odom_nav.py  # open copy from google drive
 ros2 interface list
 ros2 interface show geometry_msgs/msg/Point
+python3 odom_nav.py
 ```
 ### RPLidar
 ```
