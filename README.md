@@ -91,6 +91,8 @@ cd navrobot_ws/src
 git clode -b ros2 https://github.com/Slamtec/rplidar_ros.git
 cd ..
 colcon bulid
+ros2 pkg list # rplidar_ros2
+
 2:00:00
 ```
 ### launch file
