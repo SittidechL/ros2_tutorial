@@ -92,6 +92,7 @@ git clode -b ros2 https://github.com/Slamtec/rplidar_ros.git
 cd ..
 colcon bulid
 ros2 pkg list # rplidar_ros2
+ros2 launch rplidar_ros2 view_rplidar_launch.py 
 
 2:00:00
 ```
