@@ -94,6 +94,8 @@ colcon bulid
 ros2 pkg list # rplidar_ros2
 ros2 launch rplidar_ros2 view_rplidar_launch.py 
 
+https://github.com/Hyun-je/pyrplidar/blob/master/pyrplidar.py
+
 2:00:00
 ```
 ### launch file
