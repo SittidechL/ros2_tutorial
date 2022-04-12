@@ -88,7 +88,7 @@ python3 odom_nav.py
 rplidar ros2 github  # from Google
 https://github.com/Slamtec/rplidar_ros/tree/ros2
 cd navrobot_ws/src
-git clode -b ros2 https://github.com/Slamtec/rplidar_ros.git
+git clone -b ros2 https://github.com/Slamtec/rplidar_ros.git
 cd ..
 colcon bulid
 ros2 pkg list # rplidar_ros2
