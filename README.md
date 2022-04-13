@@ -26,6 +26,8 @@ ros2 pkg list    # can see "navrobot"
 ```
 ## connect with robot
 ```
+ssh root@192.168.1.113  # NanoPi Neo
+
 cd microros_ws && source install/local_setup.bash
 
 cd microros_ws
@@ -92,8 +94,10 @@ git clone -b ros2 https://github.com/Slamtec/rplidar_ros.git
 cd ..
 colcon bulid
 ros2 pkg list # rplidar_ros2
+ros2 launch rplidar_ros2 rplidar_launch.py 
 ros2 launch rplidar_ros2 view_rplidar_launch.py 
 
+ros2 topic echo /scan  # check work or not
 https://github.com/Hyun-je/pyrplidar/blob/master/pyrplidar.py
 
 2:00:00
