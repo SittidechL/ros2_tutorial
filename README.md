@@ -101,10 +101,12 @@ ros2 topic echo /scan  # check work or not
 https://github.com/Hyun-je/pyrplidar/blob/master/pyrplidar.py
 
 --------add below on rplidar_launch.py------
-Nod(package='tf2_ros',
+Node(
+  package='tf2_ros',
   executable='static_transform_publisher',
   name='static_tf_pub_laser',
-  arguments=['x','y','z','roll','pitch','yall','1','base_link','laser),-
+  arguments=['x','y','z','roll','pitch','yall','1','base_link','laser'],
+  ),
 ----------------------------- 
 ros2 topic echo /tf
 
@@ -116,7 +118,10 @@ mkdir launch && cd launch
 touch robot_bringup.launch.py  
 code .   # copy file from Ros2_nav/launch/robot_bringup.launch.py
 cd .. x3
+cd navrobot_ws
 colcon build
+
+cd microros_ws
 ros2 launch navrobot robot_bringup.launch.py   # connect microcontroller
 ```
 
