@@ -100,7 +100,14 @@ ros2 launch rplidar_ros2 view_rplidar_launch.py
 ros2 topic echo /scan  # check work or not
 https://github.com/Hyun-je/pyrplidar/blob/master/pyrplidar.py
 
-2:00:00
+--------add below on rplidar_launch.py------
+Nod(package='tf2_ros',
+  executable='static_transform_publisher',
+  name='static_tf_pub_laser',
+  arguments=['x','y','z','roll','pitch','yall','1','base_link','laser),-
+----------------------------- 
+ros2 topic echo /tf
+
 ```
 ### launch file
 ```
