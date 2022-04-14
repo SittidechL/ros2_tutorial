@@ -85,7 +85,7 @@ ros2 interface list
 ros2 interface show geometry_msgs/msg/Point
 python3 odom_nav.py
 ```
-### RPLidar
+### RPLidar Day2 1:38-2:49
 ```
 rplidar ros2 github  # from Google
 https://github.com/Slamtec/rplidar_ros/tree/ros2
@@ -111,7 +111,7 @@ Node(
 ros2 topic echo /tf
 
 ```
-### launch file
+### launch file Day2 2:49-3:23
 ```
 cd ~/navrobot_ws/src/navrobot/
 mkdir launch && cd launch
@@ -125,7 +125,7 @@ cd microros_ws
 ros2 launch navrobot robot_bringup.launch.py   # connect microcontroller
 ```
 
-### cartographer SLAM
+### cartographer SLAM (create Map) Day2 3:23-4:09
 ```
 cd navrobot_ws/
 sudo apt install ros-galactic-cartographer-ros
@@ -136,14 +136,21 @@ colcon build
 ros2 launch navrobot robot_bringup.launch.py
 ros2 launch navrobot cartographer.launch.py
 rviz2
+ros2 run teleop_twist_keyboard teleop_twist_keyboard
 ```
-### map server
+### map_server Day3 0:30-0:42
 ```
 cd navrobot
 sudo apt install ros-galactic-nav2-map-server
-ros2 run nav2_map_server map_saver_cli -f new_map
+ros2 run nav2_map_server map_saver_cli -f name_map   # save in local directory that open
+cd navrobot_ws/src/navrobot/map  # keep file map
 ```
-
+### planner_server-->navfn_planner/global_costmap Day3 0:42-
+planner algorithm (path finding)--> A* / Dijkstra's
+```
+cd navrobot_ws
+sudo apt install ros-galactic-navigation2   # google--> Navigation2 github
+```
 
 ### run
 terminal#1
