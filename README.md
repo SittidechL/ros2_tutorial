@@ -179,11 +179,63 @@ sudo apt install ros-galactic-diagnostic-updater
 sudo apt install ros-galactic-geographic-msgs
 sudo apt install geograpiclib-tools
 sudo apt install ros-galactic-robot-localization
-
+```
+```
 #teminal1:
 cd nav2robot_ws && source install/local_setup.bash
 ros2 run lapras_sim_support lapras_module
+```
+```
 #teminal2:
 cd nav2robot_ws && source install/local_setup.bash
-ros2 topic list   #      1:14
+ros2 topic list   # /imu      1:14
+ros2 interface show sensor_msgs/msg/imu
+```
+```
+#terminal3
+cd microros_ws && source install/local_setup.bash
+ros2 run micro_ros_agent micro_ros_agent serial --dev /dev/ttyACM0
+ros2 topic list   # /imu/raw
+ros2 topic echo /imu/raw   # see topic
+```
+```
+navrobot_ws/src/navrobot/launch/imu_publisher.launch.py
+navrobot_ws/src/navrobot/launch/imu_filter.launch.py
+navrobot_ws/src/navrobot/config/imu_filter.yaml
+navrobot_ws/src/navrobot/launch/robot_ekf.launch.py
+
+navrobot_ws/src/navrobot/config/ekf.yaml
+navrobot_ws/src/navrobot/navrobot/imu_pubisher.py
+navrobot_ws/src/navrobot/navrobot/robot_core_odom.py
+```
+```
+#terminal3
+cd microros_ws && source install/local_setup.bash
+ros2 run micro_ros_agent micro_ros_agent serial --dev /dev/ttyAC
+```
+```
+#teminal2:
+cd nav2robot_ws && source install/local_setup.bash
+ros2 run navrobot imu_publisher
+#terminal4
+cd nav2robot_ws && source install/local_setup.bash
+ros2 topic echo /imu/raw
+# https://github.com/ccny-ros-pkg/imu_tools
+cd navrobot_ws/src/
+git clone -b eloquent https://github.com/ccny-ros-pkg/imu_tools.git
+colcon build
+```
+```
+#terminal3
+cd microros_ws && source install/local_setup.bash
+ros2 run micro_ros_agent micro_ros_agent serial --dev /dev/ttyAC
+```
+```
+#teminal2:
+cd nav2robot_ws && source install/local_setup.bash
+ros2 launch navrobot imu_filter.launch.py
+ros2 topic echo /imu/data
+ros2 interface show nav_msgs/msg/Odometry
+# a covariance matrix estimation method for position uncertainty of the wheeled mobile robot
+# odometry error covariance estimation for towo wheel robot vehicles
 ```
