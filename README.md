@@ -170,8 +170,20 @@ cd navrobot_ws/src/navrobot/map/gazebo_map_mask.pgm
 cd navrobot_ws/src/navrobot/launch/add_keepout_filter.launch.py
 cd navrobot_ws/src/navrobot/config/nav2_parms_keepout.yaml
 ```
-### Sensor fusion
+### Sensor fusion IMU=inertail measurement unit
+robot localization --> kalman filtor > Extended kalman filter (EKF) / unscond
 
 ```
+cd navrobot_ws/ && source install/local_setup.bash
+sudo apt install ros-galactic-diagnostic-updater
+sudo apt install ros-galactic-geographic-msgs
+sudo apt install geograpiclib-tools
+sudo apt install ros-galactic-robot-localization
 
+#teminal1:
+cd nav2robot_ws && source install/local_setup.bash
+ros2 run lapras_sim_support lapras_module
+#teminal2:
+cd nav2robot_ws && source install/local_setup.bash
+ros2 topic list   #      1:14
 ```
