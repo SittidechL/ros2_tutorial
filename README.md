@@ -159,10 +159,16 @@ cd src/navrobot/navrobot/
 tourch robot_navigation.py   # https://github.com/SteveMacenski/nav2_rosdevday_2021/blob/main/nav2_rosdevday_2021/scripts/robot_navigator.py
 tourch naviation.py # get from fucntion robot_navigatiion.py check 2:35
 #--> regiter at navrobot/setup.py (entry point)
-cd navrobot_ws  # run 2 way initial poin and way point 3:10
+cd navrobot_ws  # run to point, initial poin and way point 3:10 / 3:36
 ros2 run navrobot navigation
+ros2 launch navrobot nav2.launch.py
+```
+### Keepout zones  https://navigation.ros.org/  Day4 10:11
+gimp --> photo cut and create photo
+```
 
 ```
+
 
 ### run
 terminal#1
