@@ -156,7 +156,11 @@ touch nav2.launch.py
 ros2 launch navrobot robot_bringup.launch.py
 ros2 launch navrobot nav2.launch.py  # much be have initail pos
 cd src/navrobot/navrobot/
-tourch navigation.py   # https://github.com/SteveMacenski/nav2_rosdevday_2021
+tourch robot_navigation.py   # https://github.com/SteveMacenski/nav2_rosdevday_2021/blob/main/nav2_rosdevday_2021/scripts/robot_navigator.py
+tourch naviation.py # get from fucntion robot_navigatiion.py check 2:35
+#--> regiter at navrobot/setup.py (entry point)
+cd navrobot_ws  # run 2 way initial poin and way point 3:10
+ros2 run navrobot navigation
 
 ```
 
