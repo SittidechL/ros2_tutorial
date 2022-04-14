@@ -149,7 +149,15 @@ cd navrobot_ws/src/navrobot/map  # keep file map
 planner algorithm (path finding)--> A* / Dijkstra's
 ```
 cd navrobot_ws
-sudo apt install ros-galactic-navigation2   # google--> Navigation2 github
+sudo apt install ros-galactic-navigation2   # google--> Navigation2 github https://github.com/ros-planning/navigation2
+# navrobot_ws/src/navrobot/config/nav2_params.yaml  --> regiter at navrobot/setup.py (google--> amcl turning guide research)  
+cd src/navrobot/launch/
+touch nav2.launch.py 
+ros2 launch navrobot robot_bringup.launch.py
+ros2 launch navrobot nav2.launch.py  # much be have initail pos
+cd src/navrobot/navrobot/
+tourch navigation.py   # https://github.com/SteveMacenski/nav2_rosdevday_2021
+
 ```
 
 ### run
