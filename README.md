@@ -166,34 +166,12 @@ ros2 launch navrobot nav2.launch.py
 ### Keepout zones  https://navigation.ros.org/  Day4 10:11
 gimp --> photo cut and create photo
 ```
+cd navrobot_ws/src/navrobot/map/gazebo_map_mask.pgm
+cd navrobot_ws/src/navrobot/launch/add_keepout_filter.launch.py
+cd navrobot_ws/src/navrobot/config/nav2_parms_keepout.yaml
+```
+### Sensor fusion
 
 ```
 
-
-### run
-terminal#1
-cd navrobot_ws
-source /opt/ros/galactic/setup.bash
-colcon build
-source install/local_setup.bash
-ros2 run navrobot robot_core_odom
-
-terminal#2
-cd navrobot_ws
-source /opt/ros/galactic/setup.bash
-cd ~/navrobot_ws/src/navrobot/navrobot
-python3 odom_nav.py
-
-
-terminal#3
-cd navrobot_ws
-source /opt/ros/galactic/setup.bash
-rviz2
-
-terminal#4
-cd nav2sim_ws
-source /opt/ros/galactic/setup.bash
-colcon build
-source install/local_setup.bash
-export GAZEBO_MODEL_PATH=/usr/share/gazebo-11/models:${GAZEBO_MODEL_PATH}:~/nav2sim_ws/src/lapras_sim # dir to "nav2sim_ws" path: nav2sim_ws/src/lapras_sim/config/env_config --> double click
-ros2 launch lapras_sim lapras_world.launch.py
+```
