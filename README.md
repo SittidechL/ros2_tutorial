@@ -203,8 +203,8 @@ navrobot_ws/src/navrobot/launch/imu_publisher.launch.py
 navrobot_ws/src/navrobot/launch/imu_filter.launch.py
 navrobot_ws/src/navrobot/config/imu_filter.yaml
 navrobot_ws/src/navrobot/launch/robot_ekf.launch.py
-
 navrobot_ws/src/navrobot/config/ekf.yaml
+
 navrobot_ws/src/navrobot/navrobot/imu_pubisher.py
 navrobot_ws/src/navrobot/navrobot/robot_core_odom.py
 ```
@@ -238,4 +238,18 @@ ros2 topic echo /imu/data
 ros2 interface show nav_msgs/msg/Odometry
 # a covariance matrix estimation method for position uncertainty of the wheeled mobile robot
 # odometry error covariance estimation for towo wheel robot vehicles
+
+#terminal/tap1: 
+cd navrobot_ws && source install/local_setup.bash
+ros2 launch navrobot robot_ekf.launch.py
+#terminal/tap2: 
+cd navrobot_ws && source install/local_setup.bash
+ros2 launch navrobot imu_filter.launch.py
+#terminal/tap3: 
+cd navrobot_ws && source install/local_setup.bash
+rviz2
+#terminal/tap4: 
+cd navrobot_ws && source install/local_setup.bash
+ros2 run teleop_twist_keyboard teleop_twist_keyboard
 ```
+
