@@ -163,7 +163,7 @@ cd navrobot_ws  # run to point, initial poin and way point 3:10 / 3:36
 ros2 run navrobot navigation
 ros2 launch navrobot nav2.launch.py
 ```
-### Keepout zones  https://navigation.ros.org/  Day4 10:11
+### Keepout zones  https://navigation.ros.org/  Day4 0:10
 gimp --> photo cut and create photo
 ```
 cd navrobot_ws/src/navrobot/map/gazebo_map_mask.pgm
