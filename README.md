@@ -170,7 +170,7 @@ cd navrobot_ws/src/navrobot/map/gazebo_map_mask.pgm
 cd navrobot_ws/src/navrobot/launch/add_keepout_filter.launch.py
 cd navrobot_ws/src/navrobot/config/nav2_parms_keepout.yaml
 ```
-### Sensor fusion IMU=inertail measurement unit
+### Sensor fusion IMU=inertail measurement unit 0:40
 robot localization --> kalman filtor > Extended kalman filter (EKF) / unscond
 
 ```
@@ -198,7 +198,7 @@ ros2 run micro_ros_agent micro_ros_agent serial --dev /dev/ttyACM0
 ros2 topic list   # /imu/raw
 ros2 topic echo /imu/raw   # see topic
 ```
-https://www.analogread.com/article/203/%E0%B8%AA%E0%B8%AD%E0%B8%99%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%83%E0%B8%8A%E0%B9%89%E0%B8%87%E0%B8%B2%E0%B8%99%E0%B8%9A%E0%B8%AD%E0%B8%A3%E0%B9%8C%E0%B8%94-arduino-%E0%B8%81%E0%B8%B1%E0%B8%9A-mpu-9250-%E0%B9%80%E0%B8%95%E0%B8%B7%E0%B8%AD%E0%B8%99%E0%B8%A7%E0%B8%B1%E0%B8%95%E0%B8%96%E0%B8%B8%E0%B9%80%E0%B8%AD%E0%B8%B5%E0%B8%A2%E0%B8%87-%E0%B8%9E%E0%B8%A3%E0%B9%89%E0%B8%AD%E0%B8%A1%E0%B9%82%E0%B8%84%E0%B9%89%E0%B8%94%E0%B8%95%E0%B8%B1%E0%B8%A7%E0%B8%AD%E0%B8%A2%E0%B9%88%E0%B8%B2%E0%B8%87
+## file
 ```
 navrobot_ws/src/navrobot/launch/imu_publisher.launch.py
 navrobot_ws/src/navrobot/launch/imu_filter.launch.py
@@ -239,16 +239,24 @@ ros2 topic echo /imu/data
 ros2 interface show nav_msgs/msg/Odometry
 # a covariance matrix estimation method for position uncertainty of the wheeled mobile robot
 # odometry error covariance estimation for towo wheel robot vehicles
-
+```
+### Run
+```
 #terminal/tap1: 
 cd navrobot_ws && source install/local_setup.bash
 ros2 launch navrobot robot_ekf.launch.py
+```
+```
 #terminal/tap2: 
 cd navrobot_ws && source install/local_setup.bash
 ros2 launch navrobot imu_filter.launch.py
+```
+```
 #terminal/tap3: 
 cd navrobot_ws && source install/local_setup.bash
 rviz2
+```
+```
 #terminal/tap4: 
 cd navrobot_ws && source install/local_setup.bash
 ros2 run teleop_twist_keyboard teleop_twist_keyboard
